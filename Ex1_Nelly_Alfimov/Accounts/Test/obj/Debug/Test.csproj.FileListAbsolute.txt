@@ -1,0 +1,8 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\Test\bin\Debug\Test.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\Test\bin\Debug\Test.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\Test\bin\Debug\Test.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\Test\bin\Debug\AccountLib.dll
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\Test\bin\Debug\AccountLib.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\Test\obj\Debug\Test.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\Test\obj\Debug\Test.pdb

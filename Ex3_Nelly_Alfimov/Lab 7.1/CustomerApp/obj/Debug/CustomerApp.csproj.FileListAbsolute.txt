@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 7.1\CustomerApp\bin\Debug\CustomerApp.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 7.1\CustomerApp\obj\Debug\CustomerApp.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 7.1\CustomerApp\bin\Debug\CustomerApp.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 7.1\CustomerApp\bin\Debug\CustomerApp.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 7.1\CustomerApp\obj\Debug\CustomerApp.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 7.1\CustomerApp\obj\Debug\CustomerApp.pdb

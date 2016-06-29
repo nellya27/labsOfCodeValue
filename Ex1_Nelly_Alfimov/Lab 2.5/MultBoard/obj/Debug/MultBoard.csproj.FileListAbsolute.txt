@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.5\MultBoard\bin\Debug\MultBoard.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.5\MultBoard\bin\Debug\MultBoard.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.5\MultBoard\bin\Debug\MultBoard.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.5\MultBoard\obj\Debug\MultBoard.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.5\MultBoard\obj\Debug\MultBoard.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.5\MultBoard\obj\Debug\MultBoard.pdb

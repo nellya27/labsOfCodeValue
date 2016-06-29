@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 7.2\GenericApp\bin\Debug\GenericApp.exe.config
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Lab 7.2\GenericApp\bin\Debug\GenericApp.exe
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Lab 7.2\GenericApp\bin\Debug\GenericApp.pdb
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Lab 7.2\GenericApp\obj\Debug\GenericApp.csprojResolveAssemblyReference.cache
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Lab 7.2\GenericApp\obj\Debug\GenericApp.exe
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Lab 7.2\GenericApp\obj\Debug\GenericApp.pdb

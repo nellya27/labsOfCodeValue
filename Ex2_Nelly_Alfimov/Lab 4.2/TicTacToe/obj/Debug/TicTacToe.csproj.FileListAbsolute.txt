@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 4.2\TicTacToe\bin\Debug\TicTacToe.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 4.2\TicTacToe\obj\Debug\TicTacToe.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 4.2\TicTacToe\bin\Debug\TicTacToe.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 4.2\TicTacToe\bin\Debug\TicTacToe.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 4.2\TicTacToe\obj\Debug\TicTacToe.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 4.2\TicTacToe\obj\Debug\TicTacToe.pdb

@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.7\DollarStairs\bin\Debug\DollarStairs.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.7\DollarStairs\bin\Debug\DollarStairs.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.7\DollarStairs\bin\Debug\DollarStairs.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.7\DollarStairs\obj\Debug\DollarStairs.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.7\DollarStairs\obj\Debug\DollarStairs.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.7\DollarStairs\obj\Debug\DollarStairs.pdb

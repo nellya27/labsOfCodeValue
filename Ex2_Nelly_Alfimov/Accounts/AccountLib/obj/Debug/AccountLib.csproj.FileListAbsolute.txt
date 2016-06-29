@@ -1,0 +1,12 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\AccountLib\obj\Debug\AccountLib.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\AccountLib\bin\Debug\AccountLib.dll.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\AccountLib\bin\Debug\AccountLib.dll
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\AccountLib\bin\Debug\AccountLib.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\AccountLib\obj\Debug\AccountLib.dll
+c:\users\nelia_000\documents\visual studio 2015\Projects\Accounts\AccountLib\obj\Debug\AccountLib.pdb
+C:\Users\nelia_000\Documents\Visual Studio 2015\Projects\Ex1_Nelly_Alfimov\Accounts\AccountLib\bin\Debug\AccountLib.dll.config
+C:\Users\nelia_000\Documents\Visual Studio 2015\Projects\Ex1_Nelly_Alfimov\Accounts\AccountLib\bin\Debug\AccountLib.dll
+C:\Users\nelia_000\Documents\Visual Studio 2015\Projects\Ex1_Nelly_Alfimov\Accounts\AccountLib\bin\Debug\AccountLib.pdb
+C:\Users\nelia_000\Documents\Visual Studio 2015\Projects\Ex1_Nelly_Alfimov\Accounts\AccountLib\obj\Debug\AccountLib.csprojResolveAssemblyReference.cache
+C:\Users\nelia_000\Documents\Visual Studio 2015\Projects\Ex1_Nelly_Alfimov\Accounts\AccountLib\obj\Debug\AccountLib.dll
+C:\Users\nelia_000\Documents\Visual Studio 2015\Projects\Ex1_Nelly_Alfimov\Accounts\AccountLib\obj\Debug\AccountLib.pdb

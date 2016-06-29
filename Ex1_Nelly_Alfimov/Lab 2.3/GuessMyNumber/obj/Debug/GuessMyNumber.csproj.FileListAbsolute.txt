@@ -1,0 +1,1 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.3\GuessMyNumber\bin\Debug\GuessMyNumber.exe.config

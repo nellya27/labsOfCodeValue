@@ -1,0 +1,5 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.1\HelloPerson\bin\Debug\HelloPerson.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.1\HelloPerson\bin\Debug\HelloPerson.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.1\HelloPerson\obj\Debug\HelloPerson.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.1\HelloPerson\obj\Debug\HelloPerson.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 2.1\HelloPerson\obj\Debug\HelloPerson.pdb
