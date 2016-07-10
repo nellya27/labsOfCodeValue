@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 5.1\ShapeLib\bin\Debug\ShapeLib.dll.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 5.1\ShapeLib\bin\Debug\ShapeLib.dll
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 5.1\ShapeLib\bin\Debug\ShapeLib.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 5.1\ShapeLib\obj\Debug\ShapeLib.dll
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 5.1\ShapeLib\obj\Debug\ShapeLib.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 5.1\ShapeLib\obj\Debug\ShapeLib.csprojResolveAssemblyReference.cache

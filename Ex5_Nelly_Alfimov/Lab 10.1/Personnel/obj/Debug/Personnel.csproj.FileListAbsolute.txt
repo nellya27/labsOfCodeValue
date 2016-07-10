@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 10.1\Personnel\bin\Debug\Personnel.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 10.1\Personnel\bin\Debug\Personnel.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 10.1\Personnel\bin\Debug\Personnel.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 10.1\Personnel\obj\Debug\Personnel.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 10.1\Personnel\obj\Debug\Personnel.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Lab 10.1\Personnel\obj\Debug\Personnel.pdb
