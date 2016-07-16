@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Advanced Lab 1.2\AttribDemo\bin\Debug\AttribDemo.exe.config
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Advanced Lab 1.2\AttribDemo\bin\Debug\AttribDemo.exe
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Advanced Lab 1.2\AttribDemo\bin\Debug\AttribDemo.pdb
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Advanced Lab 1.2\AttribDemo\obj\Debug\AttribDemo.csprojResolveAssemblyReference.cache
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Advanced Lab 1.2\AttribDemo\obj\Debug\AttribDemo.exe
+C:\Users\nelia_000\documents\visual studio 2015\Projects\Advanced Lab 1.2\AttribDemo\obj\Debug\AttribDemo.pdb
