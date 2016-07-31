@@ -1,0 +1,6 @@
+C:\Users\nelia_000\documents\visual studio 2015\Projects\BackGammon\BackGammonLogic\bin\Debug\BackGammonLogic.dll.config
+C:\Users\nelia_000\documents\visual studio 2015\Projects\BackGammon\BackGammonLogic\bin\Debug\BackGammonLogic.dll
+C:\Users\nelia_000\documents\visual studio 2015\Projects\BackGammon\BackGammonLogic\bin\Debug\BackGammonLogic.pdb
+C:\Users\nelia_000\documents\visual studio 2015\Projects\BackGammon\BackGammonLogic\obj\Debug\BackGammonLogic.csprojResolveAssemblyReference.cache
+C:\Users\nelia_000\documents\visual studio 2015\Projects\BackGammon\BackGammonLogic\obj\Debug\BackGammonLogic.dll
+C:\Users\nelia_000\documents\visual studio 2015\Projects\BackGammon\BackGammonLogic\obj\Debug\BackGammonLogic.pdb
