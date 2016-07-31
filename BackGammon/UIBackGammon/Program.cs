@@ -10,9 +10,7 @@ namespace UIBackGammon
     {
       public static void Main()
         {
-            /* Board board = new Board();
-             board.DrawBoard(); */
-
+            
             Game game = new Game();
             game.InitiallizeGame();
         }
