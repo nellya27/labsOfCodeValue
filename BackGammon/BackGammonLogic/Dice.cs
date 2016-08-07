@@ -54,7 +54,7 @@ namespace BackGammonLogic
             }
         }
         
-        public Dice ReduceCubeOption(int number)
+        public Dice GetDiceOptions(int number)
         {
           
             bool isNotUsed = true;
@@ -78,7 +78,7 @@ namespace BackGammonLogic
                 return new Dice(updatedChoises, choicesLeft);
             }
             else
-                throw new Exception("the number not match any dice options");
+                throw new Exception("the number not match any dice options"+number.ToString());
 
         }
 

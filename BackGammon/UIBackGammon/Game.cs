@@ -127,18 +127,28 @@ namespace UIBackGammon
     
         private GameLogic RegisterValidMove(Move m,Field[] newField)
         {
-            SoldierType newTurn = gameLogic.CurrentChecker;            
-            Dice newDiceState = gameLogic.DiceOptions.ReduceCubeOption(m.GetLengh);            
-            newField[m.sourceField].RemoveFromField(m.checkerType);
-            newField[m.targetField].AddToField(m.checkerType);
-            CheckForBlot(m,newField);
-            if (newDiceState.DiceChoices.Length == 0)
+           
+            SoldierType newTurn = gameLogic.CurrentChecker;
+            try
             {
-                newDiceState = null;
-                newTurn = GetOpposite(newTurn);
+                Dice newDiceState = gameLogic.DiceOptions.GetDiceOptions(m.GetLengh);
+                newField[m.sourceField].RemoveFromField(m.checkerType);
+                newField[m.targetField].AddToField(m.checkerType);
+                CheckForBlot(m, newField);
+                if (newDiceState.DiceChoices.Length == 0)
+                {
+                    newDiceState = null;
+                    newTurn = GetOpposite(newTurn);
+                }
+                GameLogic newGameState = new GameLogic(newField, newDiceState, newTurn);
+                return newGameState;
             }
-            GameLogic newGameState = new GameLogic(newField, newDiceState, newTurn);
-            return newGameState;
+            catch(Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return null;
         }
 
         private void CheckForBlot(Move m,Field [] newField)
