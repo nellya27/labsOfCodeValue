@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BackGammonLogic
 {
-    public class GameLogic
+    public class GameLogic:IGameLogic
     {
         public enum GameType
         {
@@ -14,56 +14,29 @@ namespace BackGammonLogic
             Move
         }
 
-        private Field[] fields;
-        private Move[] possibleMoves;
-        private GameType currentType;
-        private Dice diceOptions;
-        private int[] possibleSources;
         private int winner;
-        private Dictionary<int,int[]> possibleTargets;
-        private SoldierType currentChecker;
+        private GameType currentType;
+        public Field[] Fields { get; private set;}
+        public Move[] PossibleMoves { get;  private set;}
+        public Dice DiceOptions { get; private set; }
+        public int[] PossibleSources { get; private set; }
+        public Dictionary<int,int[]> PossibleTargets { get; private set; }
+        public SoldierType CurrentChecker { get; private set; }
 
-        public GameLogic(Field [] gameFields,Dice CurDiceOptions,SoldierType curColor)
+        public GameLogic(Field [] gameFields,Dice curDiceOptions,SoldierType curColor)
         {
-            diceOptions = CurDiceOptions;
-            fields = gameFields;
-            currentChecker = curColor;
+            DiceOptions = curDiceOptions;
+            Fields = gameFields;
+            CurrentChecker = curColor;
             GetPossibleMoves();
         }
-        public Field[] GetFields
-        {
-            get { return fields; }
-        }
-        public SoldierType GetCurrColor
-        {
-            get { return currentChecker; }
-        }
-
-        public Move[] GetPossMove
-        {
-            get { return possibleMoves; }
-        }
-
-        public Dice GetDiceOptions
-        {
-            get { return diceOptions; }
-        }
-
-        public Dictionary<int,int[]> GetTargets
-        {
-            get { return possibleTargets; }
-        }
-
-        public int [] GetSources
-        {
-            get { return possibleSources; }
-        }
+ 
 
         public GameType GetTurnType
         {
             get
             {
-                if (diceOptions == null)
+                if (DiceOptions == null)
                 {
                     return GameType.Roll;
                 }
@@ -76,175 +49,212 @@ namespace BackGammonLogic
         {
             get
             {
-                int oOut = (int)BordLocation.Oout;
-                int xOut = (int)BordLocation.XOut;
+                int outAll= (int)BordLocation.Nowhere;
                 winner = -1;
 
-                if (fields[oOut].GetOStoneNumber == 15)
+                if (Fields[outAll].NumberOfOStones == 15)
                     winner = (int)SoldierType.O;
-                if (fields[xOut].GetXStoneNumber == 15)
+                if (Fields[outAll].NumberOfXStones == 15)
                     winner = (int)SoldierType.X;
 
                 return winner;
             }
         }
 
-        private void GetPossibleMoves()
+        private void CalcOMovesOnField(List<Move>moves)
         {
-            Dice state = diceOptions;
-
-            if (state == null)
+            for (int i = 0; i < DiceOptions.DiceChoices.Length; i++)
             {
-                possibleMoves = new Move[0];
-                possibleSources = new int[0];
-                possibleTargets = new Dictionary<int, int[]>();
-                return;
+                int diceNumber = DiceOptions.DiceChoices[i];
+
+                for (int j = 0; j < Fields.Length; j++)
+                {
+                    if (Fields[j].IsAccsesibleField(CurrentChecker))
+                    {
+                        if (j - diceNumber >= 0)
+                        {
+                            if (Fields[j - diceNumber].NumberOfOStones > 0 && Fields[j].NumberOfOStones<5)
+                            {
+                                AddNewPossibleMove(moves, j - diceNumber, j);
+                            }
+                        }
+                        else
+                            continue;
+                    }
+                    else
+                        continue;                   
+                }
             }
+        }
 
-            Dictionary<Move, object> moves = new Dictionary<Move, object>();
+        private void CalcMovesWhenOCheckerOut(List<Move>moves)
+        {
+            int fieldsLeft = 6;
             int oOut = (int)BordLocation.Oout;
-            if (currentChecker == SoldierType.O)
+
+            for (int i = 0; i < DiceOptions.DiceChoices.Length; i++)
             {
-                if (fields[oOut].GetOStoneNumber == 0)
+                int movesLeft = DiceOptions.DiceChoices[i];
+                int target = fieldsLeft - movesLeft;
+                if (Fields[target].IsAccsesibleField(CurrentChecker))
                 {
-                    for (int i = 0; i < diceOptions.GetPossibleDiceOption.Length; i++)
+                    AddNewPossibleMove(moves, oOut, target);                 
+                }
+            }
+        }
+
+        private void CalcMovesWhenOCheckerHome(List<Move>moves)
+        {
+            int bar = (int)BordLocation.Nowhere;
+            for (int i = 0; i < DiceOptions.DiceChoices.Length; i++)
+            {
+                int diceNumber = DiceOptions.DiceChoices[i];
+                int source = 24 - diceNumber;
+                if (source > 0 && source < 23)
+                {
+                    if (Fields[source].NumberOfOStones > 0)
                     {
-                        int diceNumber = diceOptions.GetPossibleDiceOption[i];
-
-                        for (int j = 0; j < fields.Length; j++)
-                        {
-                            if (fields[j].IsAccsesibleField(currentChecker))
-                                if (j - diceNumber >= 0)
-                                    if (fields[j - diceNumber].GetOStoneNumber > 0)
-                                    {
-                                        Move currentMove = new Move(j - diceNumber, j, currentChecker);
-                                        if (!moves.ContainsKey(currentMove))
-                                            moves.Add(currentMove, null);
-                                    }
-
-                        }
+                        AddNewPossibleMove(moves, source, bar);                     
                     }
                 }
-                else
-                {
-                    int fieldsLeft = 6;
+                
+            }
+        }
 
-                    for (int i = 0; i < diceOptions.GetPossibleDiceOption.Length; i++)
+        private void CalcXMovesOnField(List<Move>moves)
+        {
+            for (int i = 0; i < DiceOptions.DiceChoices.Length; i++)
+            {
+                int diceNumber = DiceOptions.DiceChoices[i];
+                for (int j = 0; j < 24; j++)
+                {
+                    if (Fields[j].IsAccsesibleField(SoldierType.X))
                     {
-                        int movesLeft = diceOptions.GetPossibleDiceOption[i];
-                        int target = fieldsLeft - movesLeft;
-                        if (fields[target].IsAccsesibleField(currentChecker))
+                        if (j + diceNumber < Fields.Length)
                         {
-                            Move currentMove = new Move(oOut, target, currentChecker);
-                            if (!moves.ContainsKey(currentMove))
+                            if (Fields[j + diceNumber].NumberOfXStones > 0 && Fields[j].NumberOfXStones < 5)
                             {
-                                moves.Add(currentMove, null);
+                                AddNewPossibleMove(moves, j + diceNumber, j);
                             }
                         }
-
+                        else
+                            continue;
                     }
-
-
+                    else
+                        continue;
                 }
-
-                if(isWhiteHome())
+            }
+        }
+        private void CalcMovesWhenXCheckerOut(List<Move>moves)
+        {
+            int xOut = (int)BordLocation.XOut;
+            for (int i = 0; i < DiceOptions.DiceChoices.Length; i++)
+            {
+                int DiceNumber = DiceOptions.DiceChoices[i];
+                int target = xOut + DiceNumber - 8;
+                if (Fields[target].IsAccsesibleField(CurrentChecker))
                 {
-                    int bar = (int)BordLocation.Nowhere;
-                    for(int i=0;i<diceOptions.GetPossibleDiceOption.Length;i++)
-                    {
-                        int diceNumber = diceOptions.GetPossibleDiceOption[i];
-                        int source = 24 - diceNumber;
-                        if(source>0 && source<23)
-                        {
-                            if(fields[source].GetOStoneNumber>0)
-                            {
-                                Move currentMove = new Move(source, bar, currentChecker);
-                                if (!moves.ContainsKey(currentMove))
-                                    moves.Add(currentMove,null);
-                            }
-                        }
-                    }
-
+                    AddNewPossibleMove(moves, xOut, target);                 
                 }
+            }
+        }
 
+        private void CalcMovesWhenXCheckerHome(List<Move> moves)
+        {
+            int bar = (int)BordLocation.Nowhere;
+            for (int i = 0; i < DiceOptions.DiceChoices.Length; i++)
+            {
+                int diceNumber = DiceOptions.DiceChoices[i];
+                int source = diceNumber - 1;
+                if (source > 0 && source < 23)
+                {
+                    if (Fields[source].NumberOfXStones > 0)
+                    {
+                        AddNewPossibleMove(moves, source, bar);
+                    }
+                }
+            }
+        }
+        private void GetListOfOMoves(List<Move>moves)
+        {
+            int oOut = (int)BordLocation.Oout;
 
+            if (Fields[oOut].NumberOfOStones == 0)
+            {
+                CalcOMovesOnField(moves);
             }
             else
             {
-                int xOut =(int)BordLocation.XOut;
-                if(fields[xOut].GetXStoneNumber==0)
-                {
-                    for(int i=0;i<diceOptions.GetPossibleDiceOption.Length;i++)
-                    {
-                        int diceNumber = diceOptions.GetPossibleDiceOption[i];
-                        for(int j=0;j<24;j++)
-                        {
-                            if(fields[j].IsAccsesibleField(SoldierType.X))
-                               if(j+diceNumber<fields.Length-3)
-                                    if(fields[j+diceNumber].GetXStoneNumber>0)
-                                    {
-                                        Move currentMove = new Move(j + diceNumber, j, currentChecker);
-                                        if(!moves.ContainsKey(currentMove))
-                                        {
-                                            moves.Add(currentMove, null);
-                                        }
-                                    }
-                        }
-                    }
-                }
-                else
-                {
-                    for(int i=0;i<diceOptions.GetPossibleDiceOption.Length;i++)
-                    {
-                        int DiceNumber = diceOptions.GetPossibleDiceOption[i];
-                        int target = xOut + DiceNumber - 8;
-                        if(fields[target].IsAccsesibleField(currentChecker))
-                        {
-                            Move currentMove = new Move(xOut, target, currentChecker);
-                            if(!moves.ContainsKey(currentMove))
-                            {
-                                moves.Add(currentMove, null);
-                            }
-                        }
-                    }
-
-                }
-
-                if(isBlackHome())
-                {
-                    int bar = (int)BordLocation.Nowhere;
-                    for(int i=0;i<diceOptions.GetPossibleDiceOption.Length;i++)
-                    {
-                        int diceNumber = diceOptions.GetPossibleDiceOption[i];
-                        int source = diceNumber - 1;
-                        if(source>0 && source<23)
-                        {
-                            if(fields[source].GetOStoneNumber>0)
-                            {
-                                Move currentMove = new Move(source, bar, currentChecker);
-                                if(!moves.ContainsKey(currentMove))
-                                {
-                                    moves.Add(currentMove, null);
-                                }
-                            }
-                        }
-                    }
-                }
-               
+                CalcMovesWhenOCheckerOut(moves);
             }
 
-            InitializePossibleMoves(moves);
-          
-        } 
+            if (IsOHome())
+            {
+                CalcMovesWhenOCheckerHome(moves);
+            }
+        }
 
-        private void InitializePossibleMoves(Dictionary<Move,object> moves)
+        private void GetListOfXMoves(List<Move>moves)
         {
-            Move[] moveResult = moves.Keys.ToArray<Move>();
+            int xOut = (int)BordLocation.XOut;
+
+            if (Fields[xOut].NumberOfXStones == 0)
+            {
+                CalcXMovesOnField(moves);
+            }
+            else
+            {
+                CalcMovesWhenXCheckerOut(moves);
+
+            }
+            if (IsXHome())
+            {
+                CalcMovesWhenXCheckerHome(moves);
+            }
+        }
+
+        private void AddNewPossibleMove(List<Move>moves,int source,int target)
+        {
+            Move currentMove = new Move(source, target, CurrentChecker);
+            if (!moves.Contains(currentMove))
+            {
+                moves.Add(currentMove);
+            }
+        }
+
+        public void GetPossibleMoves()
+        {
+            Dice state = DiceOptions;
+
+            if (state == null)
+            {
+                PossibleMoves = new Move[0];
+                PossibleSources = new int[0];
+                PossibleTargets = new Dictionary<int, int[]>();
+                return;
+            }
+            List<Move> moves = new List<Move>();
+
+            if (CurrentChecker == SoldierType.O)
+            {
+                GetListOfOMoves(moves);
+            }
+            else
+            {
+                GetListOfXMoves(moves);               
+            }
+
+            InitializePossibleMoves(moves);          
+        }
+      
+        private void InitializePossibleMoves(List<Move> moves)
+        {
+            Move[] moveResult = moves.ToArray<Move>();
             Dictionary<int, List<int>> temporery = new Dictionary<int, List<int>>();
             for (int i = 0; i < moveResult.Length; i++)
             {
-                int source = moveResult[i].GetSourceField;
-                int target = moveResult[i].GetTargetField;
+                int source = moveResult[i].sourceField;
+                int target = moveResult[i].targetField;
                 if (!temporery.ContainsKey(source))
                 {
                     temporery.Add(source, new List<int>());
@@ -253,29 +263,28 @@ namespace BackGammonLogic
                 temporery[source].Add(target);
             }
 
-            possibleSources = temporery.Keys.ToArray<int>();
-            possibleTargets = new Dictionary<int, int[]>();
+            PossibleSources = temporery.Keys.ToArray<int>();
+            PossibleTargets = new Dictionary<int, int[]>();
             foreach (KeyValuePair<int, List<int>> item in temporery)
             {
-                possibleTargets.Add(item.Key, item.Value.ToArray<int>());
+                PossibleTargets.Add(item.Key, item.Value.ToArray<int>());
             }
 
-            possibleMoves = moveResult;
-
+            PossibleMoves = moveResult;
         }
 
 
-        private bool isWhiteHome()
+        private bool IsOHome()
         {
             int oOut = (int)BordLocation.Oout;
             bool isHome = true;
-            if(fields[oOut].GetXStoneNumber>0)
+            if(Fields[oOut].NumberOfOStones>0)
             {
                 return false;
             }
-            for(int i=6;i<24;i++)
+            for(int i=0;i<18;i++)
             {
-                if(fields[i].GetOStoneNumber>0)
+                if(Fields[i].NumberOfOStones>0)
                 {
                     return false;
                     break;
@@ -284,23 +293,26 @@ namespace BackGammonLogic
             return isHome;
         }
 
-        private bool isBlackHome()
+        private bool IsXHome()
         {
             int xOut = (int)BordLocation.XOut;
             bool isHome = true;
-            if(fields[xOut].GetOStoneNumber>0)
+            if(Fields[xOut].NumberOfXStones>0)
             {
-                return false;
+                return false;                
             }
-            for(int i=0;i<18;i++)
+            for(int i=6;i<24;i++)
             {
-                if(fields[i].GetOStoneNumber>=0)
+                if(Fields[i].NumberOfXStones>=0)
                 {
                     return false;
+                    break;                   
                 }
             }
             return isHome;
         }
-       }
+
+      
+    }
     }
     

@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BackGammonLogic;
 
 namespace UIBackGammon
 {
-    public class Program
+    public interface IGame
     {
-      public static void Main()
-        {
-            
-            Game game = new Game();
-            game.StartGame();
-        }
+        void GameEnd();
+        void Play();
+        void DoAction(Player player);
+        void StartGame();
     }
 }

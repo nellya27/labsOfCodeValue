@@ -9,24 +9,13 @@ namespace BackGammonLogic
     public class Player
     {
 
-        private SoldierType playerCheckerType;
-        private string playerName;
+        public SoldierType playerCheckerType { get; private set; }
+        public string playerName { get; private set; }
 
         public Player(SoldierType newPlayerCheker,string newPlayerName)
         {
             playerCheckerType = newPlayerCheker;
             playerName = newPlayerName;
         }
-
-        public SoldierType GetPlayerColor
-        {
-            get { return playerCheckerType; }
-        }
-
-        public string GetPlayerName
-        {
-            get { return playerName; }
-        }
-
     }
 }

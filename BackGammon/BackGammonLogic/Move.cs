@@ -9,46 +9,31 @@ namespace BackGammonLogic
     public class Move : IComparable<Move>, IEquatable<Move>
     {
 
-        private int sourceField;
-        private int targetField;
-        private SoldierType checkerType;
+        public int sourceField { get; private set; }
+        public int targetField { get; private set; }
+        public SoldierType checkerType { get; private set; }
         private int Lengh;
 
-       public Move(int newSourceField,int newTargetField,SoldierType type)
+        public Move(int newSourceField, int newTargetField, SoldierType type)
         {
 
             sourceField = newSourceField;
             targetField = newTargetField;
             checkerType = type;
-        }
-
-        public int GetSourceField
-        {
-            get { return sourceField; }
-        }
-
-        public int GetTargetField
-        {
-            get { return targetField; }
-        }
-
-        public SoldierType GetChecers
-        {
-            get { return checkerType; }
-        }
+        }       
 
         public int GetLengh
         {
             get
             {
-                int whiteOut = (int)BordLocation.Oout;
-                if(sourceField==whiteOut)
-                    return sourceField - targetField - 18;
                 int blackOut = (int)BordLocation.XOut;
+                int whiteOut = (int)BordLocation.Oout;
+                int nowhere = (int)BordLocation.Nowhere;
+                if (sourceField==whiteOut)
+                    return sourceField - targetField - 18;              
                 if (sourceField ==blackOut)
-                    return targetField + 8 - sourceField;
-                int bar = (int)BordLocation.Nowhere;
-                if(targetField==bar)
+                    return targetField + 8 - sourceField;               
+                if(targetField==nowhere)
                 {
                     if (checkerType == SoldierType.O)
                         return 24 - sourceField;
@@ -57,29 +42,24 @@ namespace BackGammonLogic
                 }
 
                 return Math.Abs(targetField - sourceField);
-
-
             }
         }
-        
-        public Move EmptyMove(SoldierType color)
-        {
-            return new Move(0, 0, color);
-        }                
-
+                      
         public bool IsEmpty
         {
             get { return sourceField == 0 && targetField == 0; }
         }
 
+
         int IComparable<Move>.CompareTo(Move m)
         {
+
             if (sourceField > m.sourceField) return 1;
             if (sourceField < m.sourceField) return -1;
             if (targetField > m.targetField) return 1;
             if (targetField < m.targetField) return -1;
-            if (checkerType > m.GetChecers) return 1;
-            if (checkerType < m.GetChecers) return -1;
+            if (checkerType > m.checkerType) return 1;
+            if (checkerType < m.checkerType) return -1;
             return 0;
         }
         bool IEquatable<Move>.Equals(Move m)

@@ -42,9 +42,9 @@
     <Compile Include="Dice.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="GameLogic.cs" />
+    <Compile Include="IGameLogic.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="MoveChecker.cs" />
-    <Compile Include="Orientation.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="SoldierType.cs" />
   </ItemGroup>

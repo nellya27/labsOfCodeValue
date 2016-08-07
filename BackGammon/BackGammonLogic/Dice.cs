@@ -11,50 +11,40 @@ namespace BackGammonLogic
     {
         private int firstCube;
         private int secondCube;
-        private int[] moveChoices;
-        private int choisesLeft;
+        public int[] DiceChoices { get; private set; }
+        public int ChoisesLeft { get; private set; }
         private int sumOfDice;
       
 
 
-        public Dice(int firstCubeResult,int SecondCubeResult)
+        public Dice(int firstCubeResult,int secondCubeResult)
         {
             firstCube = firstCubeResult;
-            secondCube = SecondCubeResult;
+            secondCube = secondCubeResult;
 
-            if (firstCubeResult==SecondCubeResult)
+            if (firstCubeResult==secondCubeResult)
             {
-                moveChoices = new  int[]{ firstCubeResult, firstCubeResult, firstCubeResult, firstCubeResult };
-                choisesLeft = 4;
+                DiceChoices = new  int[]{ firstCubeResult, firstCubeResult, firstCubeResult, firstCubeResult };
+                ChoisesLeft = 4;
             }
-            if (firstCubeResult < SecondCubeResult)
+            if (firstCubeResult < secondCubeResult)
             {
-                moveChoices = new int[] { firstCubeResult, SecondCubeResult };
-                choisesLeft = 2;
+                DiceChoices = new int[] { firstCubeResult, secondCubeResult };
+                ChoisesLeft = 2;
             }
             else
             {
-                moveChoices = new int[] { SecondCubeResult, firstCubeResult };
-                choisesLeft = 2;
+                DiceChoices = new int[] { secondCubeResult, firstCubeResult };
+                ChoisesLeft = 2;
             }
         }
 
         public Dice(int[] newMoveChoises,int newChoisesLeft)
         {
-            moveChoices = newMoveChoises;
-            choisesLeft = newChoisesLeft;
+            DiceChoices = newMoveChoises;
+            ChoisesLeft = newChoisesLeft;
         }
-        public int GetChoicesLeft
-        {
-            get { return choisesLeft; }
-        }
-         
-
-        public int [] GetPossibleDiceOption
-        {
-            get { return moveChoices; }
-        }
-
+     
         public int GetDiceSum
         {
             get
@@ -66,25 +56,21 @@ namespace BackGammonLogic
         
         public Dice ReduceCubeOption(int number)
         {
-           if(moveChoices.Length==0)
-            {
-                throw new Exception("all dice options are used");
-            }
-
+          
             bool isNotUsed = true;
-            int[] updatedChoises = new int[moveChoices.Length - 1];
+            int[] updatedChoises = new int[DiceChoices.Length - 1];
             int choicesLeft = 0;
 
-            for(int i=0;i<moveChoices.Length;i++)
+            for(int i=0;i<DiceChoices.Length;i++)
             {
-                if(isNotUsed && number==moveChoices[i])
+                if(isNotUsed && number==DiceChoices[i])
                 {
                     isNotUsed = false;
                     continue;
                 }
                 else
                 {
-                    updatedChoises[choicesLeft++] = moveChoices[i];   
+                    updatedChoises[choicesLeft++] = DiceChoices[i];   
                 }
             }
             if (!isNotUsed)
@@ -93,7 +79,6 @@ namespace BackGammonLogic
             }
             else
                 throw new Exception("the number not match any dice options");
-
 
         }
 

@@ -8,52 +8,37 @@ namespace BackGammonLogic
 {
     public class Field
     {
-       private int numberOfXStones;
-       private int numberOfOStones;
+       public int NumberOfXStones { get; set; }
+       public int NumberOfOStones { get; set; }
    
        
        public Field()
         {
-            numberOfXStones = 0;
-            numberOfOStones = 0;
+            NumberOfXStones = 0;
+            NumberOfOStones = 0;
         }
        
       public int GetStoneByType(SoldierType color)
         {
             if (color == SoldierType.X)
-                return numberOfXStones;
+                return NumberOfXStones;
             else
-                return numberOfOStones;
+                return NumberOfOStones;
         }  
     
-                
-         
-       public int GetXStoneNumber
-        {
-            set { numberOfXStones = value; }
-            get { return numberOfXStones; }
-
-        }
-
-        public int GetOStoneNumber
-        {
-            set { numberOfOStones = value; }
-            get { return numberOfOStones; }
-        }
-
-                      
+                                   
         public bool IsAccsesibleField(SoldierType type)
         {
             if(type==SoldierType.O)
             {
-                if (this.numberOfXStones > 1)                
+                if (NumberOfXStones > 1)                
                     return false;              
                 else
                     return true;
             }
             else
             {
-                if (this.numberOfOStones > 1)
+                if (NumberOfOStones > 1)
                     return false;
                 else
                     return true;
@@ -63,19 +48,19 @@ namespace BackGammonLogic
         public void AddToField(SoldierType color)
         {
             if (color == SoldierType.X)
-                numberOfXStones++;
+                NumberOfXStones++;
             else
-                numberOfOStones++;
+                NumberOfOStones++;
         }
 
         public void RemoveFromField(SoldierType color)
         {
             if (color == SoldierType.X)
             {
-                numberOfXStones--;
+                NumberOfXStones--;
             }
             else
-                numberOfOStones--;
+                NumberOfOStones--;
         }
     }
 }

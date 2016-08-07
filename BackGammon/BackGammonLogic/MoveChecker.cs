@@ -14,23 +14,13 @@ namespace BackGammonLogic
             Negative
         }
 
-        private readonly ResultType checkResult;
-        private readonly string description;
+        public ResultType CheckResult { get; private set; }
+        public string Description { get; private set; }
 
         public MoveChecker(ResultType result,string des)
         {
-            checkResult = result;
-            description = des;
-        }
-
-        public ResultType GetCheckResult
-        {
-            get { return checkResult; }
-        }
-
-        public string GetDescription
-        {
-            get { return description; }
+            CheckResult = result;
+            Description = des;
         }
 
     }

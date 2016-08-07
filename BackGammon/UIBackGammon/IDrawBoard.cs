@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BackGammonLogic;
 
 namespace UIBackGammon
 {
-    public class Program
+    interface IDrawBoard
     {
-      public static void Main()
-        {
-            
-            Game game = new Game();
-            game.StartGame();
-        }
+        void DrawBoard(Field [] gameBoard);
     }
 }
