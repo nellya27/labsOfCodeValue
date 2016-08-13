@@ -1,0 +1,8 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\interProcessSynchronization\Project1\bin\Debug\Project1.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\interProcessSynchronization\Project1\bin\Debug\Project1.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\interProcessSynchronization\Project1\bin\Debug\Project1.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\interProcessSynchronization\Project1\bin\Debug\SyncDemo.dll
+c:\users\nelia_000\documents\visual studio 2015\Projects\interProcessSynchronization\Project1\bin\Debug\SyncDemo.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\interProcessSynchronization\Project1\obj\Debug\Semple2.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\interProcessSynchronization\Project1\obj\Debug\Project1.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\interProcessSynchronization\Project1\obj\Debug\Project1.pdb

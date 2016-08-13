@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\Quenes\Queues\bin\Debug\Queues.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\Quenes\Queues\bin\Debug\Queues.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Quenes\Queues\bin\Debug\Queues.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\Quenes\Queues\obj\Debug\Queues.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\Quenes\Queues\obj\Debug\Queues.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\Quenes\Queues\obj\Debug\Queues.pdb
