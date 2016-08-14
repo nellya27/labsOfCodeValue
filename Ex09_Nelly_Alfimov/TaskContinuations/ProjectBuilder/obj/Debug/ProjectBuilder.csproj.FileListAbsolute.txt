@@ -1,0 +1,6 @@
+c:\users\nelia_000\documents\visual studio 2015\Projects\TaskContinuations\ProjectBuilder\bin\Debug\ProjectBuilder.exe.config
+c:\users\nelia_000\documents\visual studio 2015\Projects\TaskContinuations\ProjectBuilder\bin\Debug\ProjectBuilder.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\TaskContinuations\ProjectBuilder\bin\Debug\ProjectBuilder.pdb
+c:\users\nelia_000\documents\visual studio 2015\Projects\TaskContinuations\ProjectBuilder\obj\Debug\ProjectBuilder.csprojResolveAssemblyReference.cache
+c:\users\nelia_000\documents\visual studio 2015\Projects\TaskContinuations\ProjectBuilder\obj\Debug\ProjectBuilder.exe
+c:\users\nelia_000\documents\visual studio 2015\Projects\TaskContinuations\ProjectBuilder\obj\Debug\ProjectBuilder.pdb
