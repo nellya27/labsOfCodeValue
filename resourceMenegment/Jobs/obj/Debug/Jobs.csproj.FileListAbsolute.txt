@@ -1,0 +1,5 @@
+C:\Users\nelia_000\Desktop\resourceMenegment\Jobs\bin\Debug\Jobs.exe
+C:\Users\nelia_000\Desktop\resourceMenegment\Jobs\bin\Debug\Jobs.pdb
+C:\Users\nelia_000\Desktop\resourceMenegment\Jobs\obj\Debug\Jobs.csprojResolveAssemblyReference.cache
+C:\Users\nelia_000\Desktop\resourceMenegment\Jobs\obj\Debug\Jobs.exe
+C:\Users\nelia_000\Desktop\resourceMenegment\Jobs\obj\Debug\Jobs.pdb
